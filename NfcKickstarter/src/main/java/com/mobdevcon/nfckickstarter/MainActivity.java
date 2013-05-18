@@ -26,5 +26,10 @@ public class MainActivity extends Activity {
         Intent i = new Intent(this, PlainTextTagWriter.class);
         startActivity(i);
     }
+
+    public void writeAar(View v){
+        Intent i = new Intent(this, AarWriter.class);
+        startActivity(i);
+    }
     
 }
