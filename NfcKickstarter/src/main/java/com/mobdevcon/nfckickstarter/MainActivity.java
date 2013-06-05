@@ -27,6 +27,11 @@ public class MainActivity extends Activity {
         startActivity(i);
     }
 
+    public void writeUri(View v){
+        Intent i = new Intent(this, UriWriter.class);
+        startActivity(i);
+    }
+
     public void writeAar(View v){
         Intent i = new Intent(this, AarWriter.class);
         startActivity(i);

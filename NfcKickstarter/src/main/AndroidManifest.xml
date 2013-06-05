@@ -38,6 +38,9 @@
         <activity android:name=".AarWriter">
         </activity>
 
+        <activity android:name=".UriWriter">
+        </activity>
+
     </application>
 
 </manifest>

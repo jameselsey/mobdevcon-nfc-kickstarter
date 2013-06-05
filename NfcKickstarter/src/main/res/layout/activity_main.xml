@@ -12,6 +12,11 @@
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:text="Write a URI"
+            android:id="@+id/gotoUriWriter" android:layout_gravity="center" android:onClick="writeUri"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:text="Write AAR"
             android:id="@+id/gotoAarWriter" android:layout_gravity="center" android:onClick="writeAar"/>
 
