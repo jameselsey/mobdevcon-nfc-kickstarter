@@ -90,11 +90,27 @@ public class PlainTextTagWriter extends Activity {
     }
 
     /*
+       "Slightly" more simplified than the above by hard coding locale and encoding
+     */
+    private NdefRecord createSimpleTextRecord(String payload) {
+        byte[] langBytes = Locale.ENGLISH.getLanguage().getBytes(Charset.forName("US-ASCII"));
+        Charset utfEncoding = Charset.forName("UTF-8");
+        byte[] textBytes = payload.getBytes(utfEncoding);
+        int utfBit = 0;
+        char status = (char) (utfBit + langBytes.length);
+        byte[] data = new byte[1 + langBytes.length + textBytes.length];
+        data[0] = (byte) status;
+        System.arraycopy(langBytes, 0, data, 1, langBytes.length);
+        System.arraycopy(textBytes, 0, data, 1 + langBytes.length, textBytes.length);
+        return new NdefRecord(NdefRecord.TNF_WELL_KNOWN, NdefRecord.RTD_TEXT, new byte[0], data);
+    }
+
+    /*
         This is the "guts" of how a tag is written to
      */
     private boolean writeTag(Tag tag) {
         EditText et = (EditText) findViewById(R.id.contents);
-        NdefRecord record = createTextRecord(et.getText().toString(), Locale.ENGLISH, true);
+        NdefRecord record = createSimpleTextRecord(et.getText().toString());
         NdefMessage message = new NdefMessage(new NdefRecord[]{record});
 
         try {

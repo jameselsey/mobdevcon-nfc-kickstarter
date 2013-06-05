@@ -7,7 +7,7 @@
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Write a tag"
+            android:text="Write a plain text tag"
             android:id="@+id/gotoTagWriter" android:layout_gravity="center" android:onClick="writeTag"/>
     <Button
             android:layout_width="fill_parent"
