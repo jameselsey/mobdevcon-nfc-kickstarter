@@ -1,6 +1,5 @@
 package com.mobdevcon.nfckickstarter;
 
-import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -8,18 +7,14 @@ import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.tech.Ndef;
-import android.nfc.tech.NdefFormatable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Locale;
 
-public class PlainTextTagWriter extends Activity {
+public class PlainTextTagWriter extends AbstractTagWriter {
 
     private boolean writeModeEnabled;
     private NfcAdapter nfcAdapter;
@@ -105,57 +100,10 @@ public class PlainTextTagWriter extends Activity {
         return new NdefRecord(NdefRecord.TNF_WELL_KNOWN, NdefRecord.RTD_TEXT, new byte[0], data);
     }
 
-    /*
-        This is the "guts" of how a tag is written to
-     */
     private boolean writeTag(Tag tag) {
         EditText et = (EditText) findViewById(R.id.contents);
         NdefRecord record = createSimpleTextRecord(et.getText().toString());
         NdefMessage message = new NdefMessage(new NdefRecord[]{record});
-
-        try {
-            Ndef ndef = Ndef.get(tag);
-            if (ndef != null) {
-                ndef.connect();
-
-                if (!ndef.isWritable()) {
-                    displayToast("Read-only tag, unable to write.");
-                    return false;
-                }
-
-                int size = message.toByteArray().length;
-                if (ndef.getMaxSize() < size) {
-                    displayToast("Tag doesn't have enough free space. Required: " + size + " Available: " + ndef.getMaxSize());
-                    return false;
-                }
-
-                ndef.writeNdefMessage(message);
-                displayToast("Tag written successfully.");
-                return true;
-            } else {
-                NdefFormatable format = NdefFormatable.get(tag);
-                if (format != null) {
-                    try {
-                        format.connect();
-                        format.format(message);
-                        displayToast("Tag written successfully!");
-                        return true;
-                    } catch (IOException e) {
-                        displayToast("Unable to format tag to NDEF.");
-                        return false;
-                    }
-                } else {
-                    displayToast("Tag doesn't appear to support NDEF format.");
-                    return false;
-                }
-            }
-        } catch (Exception e) {
-            displayToast("Failed to write tag");
-        }
-        return false;
-    }
-
-    private void displayToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        return writeMessageToTag(tag, message);
     }
 }
