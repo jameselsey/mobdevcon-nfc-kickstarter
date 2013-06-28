@@ -19,5 +19,9 @@
             android:layout_height="wrap_content"
             android:text="Write AAR (4.0 onwards)"
             android:id="@+id/gotoAarWriter" android:layout_gravity="center" android:onClick="writeAar"/>
-
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Beam! (4.0 onwards)"
+            android:id="@+id/gotoBeamer" android:layout_gravity="center" android:onClick="beam"/>
 </LinearLayout>

@@ -10,6 +10,9 @@
 
     <uses-permission android:name="android.permission.NFC"/>
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
             android:allowBackup="true"
             android:icon="@drawable/ic_launcher"
@@ -39,6 +42,14 @@
         </activity>
 
         <activity android:name=".UriWriter">
+        </activity>
+
+        <activity android:name=".Beamer">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/vnd.com.mobdevcon.nfckickstarter.beam"/>
+            </intent-filter>
         </activity>
 
     </application>

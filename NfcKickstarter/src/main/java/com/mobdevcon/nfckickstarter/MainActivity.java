@@ -1,8 +1,8 @@
 package com.mobdevcon.nfckickstarter;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 
@@ -13,7 +13,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -27,14 +26,18 @@ public class MainActivity extends Activity {
         startActivity(i);
     }
 
-    public void writeUri(View v){
+    public void writeUri(View v) {
         Intent i = new Intent(this, UriWriter.class);
         startActivity(i);
     }
 
-    public void writeAar(View v){
+    public void writeAar(View v) {
         Intent i = new Intent(this, AarWriter.class);
         startActivity(i);
     }
-    
+
+    public void beam(View v) {
+        Intent i = new Intent(this, Beamer.class);
+        startActivity(i);
+    }
 }
