@@ -10,8 +10,8 @@
 
     <uses-permission android:name="android.permission.NFC"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
             android:allowBackup="true"
@@ -27,24 +27,24 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PlainTextTagWriter">
+        <activity android:name=".plaintext.PlainTextTagWriter">
         </activity>
 
-        <activity android:name=".PlainTextTagReader">
+        <activity android:name=".plaintext.PlainTextTagReader">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
 
-        <activity android:name=".AarWriter">
+        <activity android:name=".aar.AarWriter">
         </activity>
 
-        <activity android:name=".UriWriter">
+        <activity android:name=".uri.UriWriter">
         </activity>
 
-        <activity android:name=".Beamer">
+        <activity android:name=".beam.Beamer">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>

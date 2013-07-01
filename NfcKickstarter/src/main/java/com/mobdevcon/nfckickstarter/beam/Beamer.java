@@ -1,4 +1,4 @@
-package com.mobdevcon.nfckickstarter;
+package com.mobdevcon.nfckickstarter.beam;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.mobdevcon.nfckickstarter.R;
+
+/**
+ * @author @jameselsey1986
+ *         <p/>
+ *         This activity demonstrates how to use beaming for transmitting data between devices.
+ *         <p/>
+ *         The receiving device needs to be unlocked and the application in the foreground.
+ *         <p/>
+ *         Pushing of messages is handled by invoking setNdefPushMessage on an NfcAdapter, passing an NdefMessage
+ */
 public class Beamer extends Activity {
     private NfcAdapter mNfcAdapter;
     private EditText et;

@@ -8,10 +8,15 @@
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="88dp"
-            android:id="@+id/contents" android:hint="Enter some text..." android:linksClickable="true"/>
+            android:id="@+id/contents"
+            android:hint="Enter some text..."
+            android:linksClickable="true"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Write to tag"
-            android:id="@+id/writeClicked" android:onClick="writeClicked" android:singleLine="false"/>
+            android:id="@+id/writeClicked"
+            android:onClick="writeClicked"
+            android:singleLine="false"/>
 </LinearLayout>

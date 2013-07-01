@@ -9,14 +9,21 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Enter the package name for the AAR "
-            android:id="@+id/textView" android:textSize="20dip"/>
+            android:id="@+id/textView"
+            android:textSize="20dip"/>
+
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="88dp"
-            android:id="@+id/aarPackageName" android:text="com.google.zxing.client.android" android:linksClickable="true"/>
+            android:id="@+id/aarPackageName"
+            android:text="com.google.zxing.client.android"
+            android:linksClickable="true"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Write AAR to tag"
-            android:id="@+id/writeAarClicked" android:onClick="writeAarClicked" android:singleLine="false"/>
+            android:id="@+id/writeAarClicked"
+            android:onClick="writeAarClicked"
+            android:singleLine="false"/>
 </LinearLayout>

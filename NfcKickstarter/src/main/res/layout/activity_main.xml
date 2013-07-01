@@ -4,24 +4,36 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
         >
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Write a plain text tag"
-            android:id="@+id/gotoTagWriter" android:layout_gravity="center" android:onClick="writeTag"/>
+            android:id="@+id/gotoTagWriter"
+            android:layout_gravity="center"
+            android:onClick="writeTag"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Write a URI"
-            android:id="@+id/gotoUriWriter" android:layout_gravity="center" android:onClick="writeUri"/>
+            android:id="@+id/gotoUriWriter"
+            android:layout_gravity="center"
+            android:onClick="writeUri"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Write AAR (4.0 onwards)"
-            android:id="@+id/gotoAarWriter" android:layout_gravity="center" android:onClick="writeAar"/>
+            android:id="@+id/gotoAarWriter"
+            android:layout_gravity="center"
+            android:onClick="writeAar"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Beam! (4.0 onwards)"
-            android:id="@+id/gotoBeamer" android:layout_gravity="center" android:onClick="beam"/>
+            android:id="@+id/gotoBeamer"
+            android:layout_gravity="center"
+            android:onClick="beam"/>
 </LinearLayout>

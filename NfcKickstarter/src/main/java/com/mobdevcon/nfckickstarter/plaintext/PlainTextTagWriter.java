@@ -1,4 +1,4 @@
-package com.mobdevcon.nfckickstarter;
+package com.mobdevcon.nfckickstarter.plaintext;
 
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -11,9 +11,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.mobdevcon.nfckickstarter.AbstractTagWriter;
+import com.mobdevcon.nfckickstarter.R;
+
 import java.nio.charset.Charset;
 import java.util.Locale;
 
+/**
+ * @author @jameselsey1986
+ *         <p/>
+ *         This activity demonstrates how to write plain text data to a tag
+ */
 public class PlainTextTagWriter extends AbstractTagWriter {
 
     private boolean writeModeEnabled;

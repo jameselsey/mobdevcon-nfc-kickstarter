@@ -9,25 +9,37 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Enter a URI to write to a tag, such as http://www.google.com or twitter://user?user_id=jameselsey1986"
-            android:id="@+id/textView" android:textSize="20dip"/>
+            android:id="@+id/textView"
+            android:textSize="20dip"/>
 
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="88dp"
-            android:id="@+id/uriContents" android:hint="http://www.google.com" android:linksClickable="true"/>
+            android:id="@+id/uriContents"
+            android:hint="http://www.google.com"
+            android:linksClickable="true"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Example Twitter"
-            android:id="@+id/exampleTwitterClicked" android:onClick="exampleTwitterClicked" android:singleLine="false"/>
+            android:id="@+id/exampleTwitterClicked"
+            android:onClick="exampleTwitterClicked"
+            android:singleLine="false"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Example Http"
-            android:id="@+id/exampleHttpClicked" android:onClick="exampleHttpClicked" android:singleLine="false"/>
+            android:id="@+id/exampleHttpClicked"
+            android:onClick="exampleHttpClicked"
+            android:singleLine="false"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Write to tag"
-            android:id="@+id/writeUriClicked" android:onClick="writeUriClicked" android:singleLine="false"/>
+            android:id="@+id/writeUriClicked"
+            android:onClick="writeUriClicked"
+            android:singleLine="false"/>
 </LinearLayout>

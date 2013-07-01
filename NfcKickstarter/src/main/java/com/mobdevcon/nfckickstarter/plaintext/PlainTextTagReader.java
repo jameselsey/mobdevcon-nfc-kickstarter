@@ -1,4 +1,4 @@
-package com.mobdevcon.nfckickstarter;
+package com.mobdevcon.nfckickstarter.plaintext;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,15 +10,19 @@ import android.os.Parcelable;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mobdevcon.nfckickstarter.R;
+
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This activity is spawned when tags of mime type text/plain are discovered, hence we can assume the tags
- * are of that type when reading their contents.
- *
- * (check AndroidManifest.xml for mime configuration)
+ * @author @jameselsey1986
+ *         <p/>
+ *         This activity is spawned when tags of mime type text/plain are discovered (as defined per the AndroidManifest.xml),
+ *         hence we can assume the tags are of that type when reading their contents.
+ *         <p/>
+ *         (check AndroidManifest.xml for mime configuration)
  */
 public class PlainTextTagReader extends Activity {
 
@@ -38,7 +42,7 @@ public class PlainTextTagReader extends Activity {
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
             Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
             if (rawMsgs != null) {
-                for (Parcelable parcelable : rawMsgs){
+                for (Parcelable parcelable : rawMsgs) {
                     messages.add((NdefMessage) parcelable);
                 }
             }
@@ -53,8 +57,8 @@ public class PlainTextTagReader extends Activity {
      */
     private void displayRecords(List<NdefMessage> msgs) {
         StringBuilder sb = new StringBuilder();
-        for (NdefMessage message : msgs){
-            for (NdefRecord record : message.getRecords()){
+        for (NdefMessage message : msgs) {
+            for (NdefRecord record : message.getRecords()) {
                 sb.append(record.toString());
             }
         }
@@ -68,8 +72,8 @@ public class PlainTextTagReader extends Activity {
      */
     private void displayTextPayloads(List<NdefMessage> msgs) {
         StringBuilder sb = new StringBuilder();
-        for (NdefMessage message : msgs){
-            for (NdefRecord record : message.getRecords()){
+        for (NdefMessage message : msgs) {
+            for (NdefRecord record : message.getRecords()) {
                 String text = getStringFromPayload(record.getPayload());
                 sb.append(text + "\n");
             }
@@ -81,12 +85,8 @@ public class PlainTextTagReader extends Activity {
 
     /*
         Utility method to convert the payload byte array into a human readable String
-
-        Without decoding, your message would appear as :
-        enMy message here
-
      */
-    private String getStringFromPayload(byte[] payload){
+    private String getStringFromPayload(byte[] payload) {
         String encoding = ((payload[0] & 0200) == 0) ? "UTF-8" : "UTF-16";
         int langageCodeLength = payload[0] & 0077;
         try {

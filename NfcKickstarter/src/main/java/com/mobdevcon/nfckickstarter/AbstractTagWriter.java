@@ -10,7 +10,9 @@ import android.widget.Toast;
 import java.io.IOException;
 
 /**
- * AbstractTagWriter to hold common NFC tag writing code.
+ * @author @jameselsey1986
+ *         <p/>
+ *         AbstractTagWriter to hold common NFC tag writing code.
  */
 public abstract class AbstractTagWriter extends Activity {
 

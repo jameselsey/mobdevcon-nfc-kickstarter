@@ -1,4 +1,4 @@
-package com.mobdevcon.nfckickstarter;
+package com.mobdevcon.nfckickstarter.aar;
 
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -11,6 +11,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.mobdevcon.nfckickstarter.AbstractTagWriter;
+import com.mobdevcon.nfckickstarter.R;
+
+/**
+ * @author @jameselsey1986
+ *         <p/>
+ *         This class demonstrates how to write an AAR record onto a tag. Firstly we must set a PendingIntent
+ *         so that when a tag is discovered we can intercept the intent and write to the tag.
+ *         <p/>
+ *         Creating an AAR is as easy as instantiating an NdefRecord from a package name.
+ *         <p/>
+ *         When the tag is scanned, it will attempt to load the application by searching the device for the package
+ *         name embedded in the AAR. If the application is not available on the device, the marketplace will be opened
+ *         and the application searched for, ready to download.
+ */
 public class AarWriter extends AbstractTagWriter {
 
     private boolean writeModeEnabled;

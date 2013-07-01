@@ -9,14 +9,20 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Enter a message to have beamed"
-            android:id="@+id/textView" android:textSize="20dip"/>
+            android:id="@+id/textView"
+            android:textSize="20dip"/>
+
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="88dp"
-            android:id="@+id/beamerMessage" android:linksClickable="true"/>
+            android:id="@+id/beamerMessage"
+            android:linksClickable="true"/>
+
     <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Beam!"
-            android:id="@+id/beamClicked" android:onClick="beamClicked" android:singleLine="false"/>
+            android:id="@+id/beamClicked"
+            android:onClick="beamClicked"
+            android:singleLine="false"/>
 </LinearLayout>

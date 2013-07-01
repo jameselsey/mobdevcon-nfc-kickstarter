@@ -1,6 +1,5 @@
-package com.mobdevcon.nfckickstarter;
+package com.mobdevcon.nfckickstarter.uri;
 
-import android.app.Activity;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -8,16 +7,22 @@ import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.tech.Ndef;
-import android.nfc.tech.NdefFormatable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import java.io.IOException;
+import com.mobdevcon.nfckickstarter.AbstractTagWriter;
+import com.mobdevcon.nfckickstarter.R;
+
 import java.nio.charset.Charset;
 
+/**
+ * @author @jameselsey1986
+ *         <p/>
+ *         This activity demonstrates how to write a URI to a tag in a similar manner to creating plain text tags
+ *         <p/>
+ *         Please note, that as of API 14 (4.0) you can use NdefRecord.createUri() instead, which is far easier
+ */
 public class UriWriter extends AbstractTagWriter {
 
     private boolean writeModeEnabled;
@@ -74,7 +79,6 @@ public class UriWriter extends AbstractTagWriter {
 
         nfcAdapter.enableForegroundDispatch(this, pendingIntent, filters, null);
     }
-
 
     private NdefRecord createUriRecord(String uri) {
         byte[] uriField = uri.getBytes(Charset.forName("US-ASCII"));

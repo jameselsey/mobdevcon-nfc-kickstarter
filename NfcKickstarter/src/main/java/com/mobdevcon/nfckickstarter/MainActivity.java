@@ -6,6 +6,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import com.mobdevcon.nfckickstarter.aar.AarWriter;
+import com.mobdevcon.nfckickstarter.beam.Beamer;
+import com.mobdevcon.nfckickstarter.plaintext.PlainTextTagWriter;
+import com.mobdevcon.nfckickstarter.uri.UriWriter;
+
+/**
+ * @author @jameselsey1986
+ *         <p/>
+ *         MainActivity used for accessing various NFC features of this application, nothing more than a menu
+ */
 public class MainActivity extends Activity {
 
     @Override
